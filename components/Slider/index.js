@@ -8,6 +8,7 @@ const Slider = () => {
     useEffect(() => {
       const interval = setInterval(() => changeSlide(1), 5000); // Change every 5 seconds
       return () => clearInterval(interval);
+      
     }, []);
   
     const changeSlide = (direction) => {
