@@ -16,21 +16,17 @@ export default function Home() {
   
     useEffect(() => {
         const { id } = router.query; 
-
-        // Check if the id is available
         if (id) {
             const productById = getProductById(id);
-            console.log(productById, 'productById'); // Debugging statement
             setProduct(productById);
         }
         setTimeout(() => {
             window.scrollTo(0, 0);
         }, 0);
-    }, [router.query.id]); // Add id to dependency array
+    }, [router.query.id]);
 
     
     function getProductById(productId) {
-        // Ensure productId is parsed as an integer
         const product = products.find(item => item.id === parseInt(productId));
     
         if (!product) {
